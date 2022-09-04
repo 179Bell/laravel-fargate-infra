@@ -1,5 +1,5 @@
 variable "system_name" {
-  default = "laravel-fargate"
+  default = "example-prod-foobar"
 }
 
 variable "vpc_cidr" {

@@ -1,6 +1,7 @@
 module "vpc" {
     source = "../../aws/modules/vpc"
 
+    enable_nat_gateway = false
     system_name = var.system_name
     vpc_cidr = var.vpc_cidr
     azs = ["ap-northeast-1a","ap-northeast-1c"]
