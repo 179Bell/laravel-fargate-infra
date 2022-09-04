@@ -99,7 +99,7 @@ resource "aws_eip" "nat_gateway" {
 }
 
 resource "aws_nat_gateway" "this" {
-    count = length(var.public_subnet)
+    count = var.enable_nat_gateway ? length(var.public_subnet) : 0
 
     allocation_id = aws_eip.nat_gateway[count.index].id
     subnet_id = aws_subnet.public[count.index].id
